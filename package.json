@@ -1,6 +1,6 @@
 {
-  "name": "@netlify/plugin-sitemap",
-  "version": "0.5.1",
+  "name": "plugin-sitemap",
+  "version": "0.5.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -31,6 +31,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.20.0",
     "globby": "^10.0.1",
     "mkdirp": "^1.0.4",
     "sitemap": "^3.2.2"
