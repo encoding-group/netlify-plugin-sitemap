@@ -4,7 +4,19 @@ const path = require("path");
 const mkdirp = require("mkdirp");
 const sm = require("sitemap");
 const globby = require("globby");
-const getApiPaths = require(path.resolve(__dirname, "api_paths"));
+const axios = require("axios");
+
+function getApiPaths(url) {
+  return axios.get(url).then((response) => {
+    let links = [];
+    for (const post of response.data) {
+      links.push(
+        post.link.replace(/https\:\/\/api.robinweissenborn.de\//, "/")
+      );
+    }
+    return links;
+  });
+}
 
 module.exports = async function makeSitemap(opts = {}) {
   const {
