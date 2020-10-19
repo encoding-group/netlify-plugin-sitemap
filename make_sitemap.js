@@ -4,7 +4,7 @@ const path = require("path");
 const mkdirp = require("mkdirp");
 const sm = require("sitemap");
 const globby = require("globby");
-const getApiPaths = require("./api_paths");
+const getApiPaths = require(path.resolve(__dirname, "api_paths"));
 
 module.exports = async function makeSitemap(opts = {}) {
   const {
